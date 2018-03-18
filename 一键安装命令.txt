@@ -1,0 +1,21 @@
+
+wget --no-check-certificate https://raw.githubusercontent.com/becapital/kcp-server/master/install-kcp-server.sh -O ./install-kcp-server.sh
+chmod 500 ./install-kcp-server.sh
+./install-kcp-server.sh install
+
+UnInstall
+
+./install-kcp-server.sh uninstall
+
+
+Update
+
+./install-kcp-server.sh update
+
+
+服务器管理
+Usage: /etc/init.d/kcp-server {start|stop|restart|status}
+
+
+/etc/init.d/kcp-server status
+/etc/init.d/kcp-server restart
