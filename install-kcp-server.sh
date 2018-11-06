@@ -14,12 +14,14 @@ kcptun_api_filename="/tmp/kcptun_api_file.txt"
 program_name="kcp-server"
 kcp_init="/etc/init.d/${program_name}"
 program_config_file="server-kcptun.json"
-program_socks5_download="https://raw.githubusercontent.com/clangcn/kcp-server/master/socks5_latest"
+program_socks5_download="https://raw.githubusercontent.com/becapital/kcp-server/master/socks5_latest"
+#program_socks5_download="https://raw.githubusercontent.com/clangcn/kcp-server/master/socks5_latest"
 program_socks5_filename="socks5"
 socks_md5sum_file=md5sum.md
-program_init_download_url=https://raw.githubusercontent.com/clangcn/kcp-server/master/kcptun-server.init
-str_install_shell=https://raw.githubusercontent.com/clangcn/kcp-server/master/install-kcp-server.sh
-
+program_init_download_url=https://raw.githubusercontent.com/becapital/kcp-server/master/kcptun-server.init
+#program_init_download_url=https://raw.githubusercontent.com/clangcn/kcp-server/master/kcptun-server.init
+str_install_shell=https://raw.githubusercontent.com/becapital/kcp-server/master/install-kcp-server.sh
+#str_install_shell=https://raw.githubusercontent.com/clangcn/kcp-server/master/install-kcp-server.sh
 function fun_clang(){
     local clear_flag=""
     clear_flag=$1
