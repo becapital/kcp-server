@@ -21,7 +21,9 @@ wget --no-check-certificate https://raw.githubusercontent.com/becapital/kcp-serv
 chmod 500 ./install-kcp-server.sh
 ./install-kcp-server.sh install
 ```
+kcpserver配置文件修改：
 
+root@ubuntu:~#   vi /usr/local/kcp-server/server-kcptun.json
 ### UnInstall
 ```Bash
     ./install-kcp-server.sh uninstall
