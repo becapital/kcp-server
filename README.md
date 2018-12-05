@@ -21,9 +21,9 @@ wget --no-check-certificate https://raw.githubusercontent.com/becapital/kcp-serv
 chmod 500 ./install-kcp-server.sh
 ./install-kcp-server.sh install
 ```
-kcpserver配置文件修改：
+kcpserver配置文件修改：root@ubuntu:~#   vi /usr/local/kcp-server/server-kcptun.json
+修改后VPS需要reboot
 
-root@ubuntu:~#   vi /usr/local/kcp-server/server-kcptun.json
 ### UnInstall
 ```Bash
     ./install-kcp-server.sh uninstall
@@ -36,3 +36,9 @@ root@ubuntu:~#   vi /usr/local/kcp-server/server-kcptun.json
 ```Bash
     Usage: /etc/init.d/kcp-server {start|stop|restart|status}
 ```
+ /etc/init.d/kcp-server restart
+ /etc/init.d/kcp-server status
+
+  ./install-kcp-server.sh uninstall
+
+  ./install-kcp-server.sh update
