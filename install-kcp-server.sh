@@ -177,7 +177,7 @@ function fun_check_port(){
 
 # input port
 function fun_input_kcptun_port(){
-    def_server_port="45678"
+    def_server_port="85"
     echo ""
     echo -n -e "Please input ${COLOR_GREEN}Kcptun${COLOR_END} Port [1-65535]"
     read -p "(Default Server Port: ${def_server_port}):" serverport
@@ -342,7 +342,7 @@ function install_program_server_clang(){
     echo "10: xtea"
     echo "11: xor"
     echo "#####################################################"
-    read -p "Enter your choice (1, 2, 3, ... or exit. default [1]): " strcrypt
+    read -p "Enter your choice (1, 2, 3, ... or exit. default [4]): " strcrypt
     case "${strcrypt}" in
         1|[aA][eE][sS])
             strcrypt="aes"
@@ -392,7 +392,7 @@ function install_program_server_clang(){
     echo "3: fast3"
     echo "4: normal"
     echo "#####################################################"
-    read -p "Enter your choice (1, 2, 3, 4 or exit. default [2]): " strmode
+    read -p "Enter your choice (1, 2, 3, 4 or exit. default [3]): " strmode
     case "${strmode}" in
         1|[fF][aA][sS][tT])
             strmode="fast"
@@ -437,7 +437,7 @@ function install_program_server_clang(){
     echo ""
     set_iptables="n"
         echo  -e "\033[33mDo you want to set iptables?\033[0m"
-        read -p "(if you want please input: y,Default [no]):" set_iptables
+        read -p "(if you want please input: y,Default [yes" set_iptables
 
         case "${set_iptables}" in
         [yY]|[yY][eE][sS])
@@ -481,22 +481,22 @@ cat > ${str_program_dir}/${program_config_file}<<-EOF
     "crypt": "${strcrypt}",
     "mode": "${strmode}",
     "mtu": ${strInputMTU},
-    "sndwnd": 1024,
-    "rcvwnd": 1024,
+    "sndwnd": 10240
+    "rcvwnd": 10240
     "nocomp": ${set_kcptun_comp}
 }
 EOF
 cat > ${str_program_dir}/client.json<<-EOF
 {
-    "localaddr": ":1082",
+    "localaddr": ":1080",
     "remoteaddr": "${defIP}:${set_kcptun_port}",
     "key": "${set_kcptun_pwd}",
     "crypt": "${strcrypt}",
     "mode": "${strmode}",
     "conn": 1,
     "mtu": ${strInputMTU},
-    "sndwnd": 128,
-    "rcvwnd": 1024,
+    "sndwnd": 1280
+    "rcvwnd": 10240
     "nocomp": ${set_kcptun_comp}
 }
 EOF
