@@ -5,7 +5,7 @@ export PATH
 #   System Required:  CentOS Debian or Ubuntu (32bit/64bit)
 #   Description:  A tool to auto-compile & install kcptun-server on Linux
 #   Author: Clang
-#   Intro:  http://koolshare.cn/forum-72-1.html
+#   Intro:  白鹿山人 修改
 #===============================================================================================
 version="3.6"
 str_program_dir="/usr/local/kcp-server"
@@ -34,7 +34,7 @@ function fun_clang(){
     echo "+---------------------------------------------------------+"
     echo "| A tool to auto-compile & install kcptun-server on Linux |"
     echo "+---------------------------------------------------------+"
-    echo "|        Intro: http://koolshare.cn/forum-72-1.html       |"
+    echo "|        白鹿山人                                          |"
     echo "+---------------------------------------------------------+"
     echo ""
 }
