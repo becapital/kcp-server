@@ -437,7 +437,7 @@ function install_program_server_clang(){
     echo ""
     set_iptables="n"
         echo  -e "\033[33mDo you want to set iptables?\033[0m"
-        read -p "(if you want please input: y,Default [yes" set_iptables
+        read -p "(if you want please input: y,Default [yes]" set_iptables
 
         case "${set_iptables}" in
         [yY]|[yY][eE][sS])
