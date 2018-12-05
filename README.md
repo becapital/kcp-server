@@ -37,6 +37,7 @@ kcpserver配置文件修改：root@ubuntu:~#   vi /usr/local/kcp-server/server-k
     Usage: /etc/init.d/kcp-server {start|stop|restart|status}
 ```
  /etc/init.d/kcp-server restart
+ 
  /etc/init.d/kcp-server status
 
   ./install-kcp-server.sh uninstall
