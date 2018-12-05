@@ -5,7 +5,7 @@ export PATH
 #   System Required:  CentOS Debian or Ubuntu (32bit/64bit)
 #   Description:  A tool to auto-compile & install kcptun-server on Linux
 #   Author: Clang
-#   Intro:  白鹿山人 修改
+#   Intro:  http://koolshare.cn/forum-72-1.html
 #===============================================================================================
 version="3.6"
 str_program_dir="/usr/local/kcp-server"
@@ -15,13 +15,11 @@ program_name="kcp-server"
 kcp_init="/etc/init.d/${program_name}"
 program_config_file="server-kcptun.json"
 program_socks5_download="https://raw.githubusercontent.com/becapital/kcp-server/master/socks5_latest"
-#program_socks5_download="https://raw.githubusercontent.com/clangcn/kcp-server/master/socks5_latest"
 program_socks5_filename="socks5"
 socks_md5sum_file=md5sum.md
 program_init_download_url=https://raw.githubusercontent.com/becapital/kcp-server/master/kcptun-server.init
-#program_init_download_url=https://raw.githubusercontent.com/clangcn/kcp-server/master/kcptun-server.init
 str_install_shell=https://raw.githubusercontent.com/becapital/kcp-server/master/install-kcp-server.sh
-#str_install_shell=https://raw.githubusercontent.com/clangcn/kcp-server/master/install-kcp-server.sh
+
 function fun_clang(){
     local clear_flag=""
     clear_flag=$1
@@ -34,7 +32,7 @@ function fun_clang(){
     echo "+---------------------------------------------------------+"
     echo "| A tool to auto-compile & install kcptun-server on Linux |"
     echo "+---------------------------------------------------------+"
-    echo "|        白鹿山人                                          |"
+    echo "|                         白鹿山人                         |"
     echo "+---------------------------------------------------------+"
     echo ""
 }
@@ -392,7 +390,7 @@ function install_program_server_clang(){
     echo "3: fast3"
     echo "4: normal"
     echo "#####################################################"
-    read -p "Enter your choice (1, 2, 3, 4 or exit. default [3]): " strmode
+    read -p "Enter your choice (1, 2, 3, 4 or exit. default [2]): " strmode
     case "${strmode}" in
         1|[fF][aA][sS][tT])
             strmode="fast"
@@ -437,7 +435,7 @@ function install_program_server_clang(){
     echo ""
     set_iptables="n"
         echo  -e "\033[33mDo you want to set iptables?\033[0m"
-        read -p "(if you want please input: y,Default [yes]" set_iptables
+        read -p "(if you want please input: y,Default [no]):" set_iptables
 
         case "${set_iptables}" in
         [yY]|[yY][eE][sS])
@@ -481,8 +479,8 @@ cat > ${str_program_dir}/${program_config_file}<<-EOF
     "crypt": "${strcrypt}",
     "mode": "${strmode}",
     "mtu": ${strInputMTU},
-    "sndwnd": 10240
-    "rcvwnd": 10240
+    "sndwnd": 10240,
+    "rcvwnd": 10240,
     "nocomp": ${set_kcptun_comp}
 }
 EOF
@@ -495,8 +493,8 @@ cat > ${str_program_dir}/client.json<<-EOF
     "mode": "${strmode}",
     "conn": 1,
     "mtu": ${strInputMTU},
-    "sndwnd": 1280
-    "rcvwnd": 10240
+    "sndwnd": 1280,
+    "rcvwnd": 10240,
     "nocomp": ${set_kcptun_comp}
 }
 EOF
