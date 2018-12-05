@@ -24,14 +24,6 @@ chmod 500 ./install-kcp-server.sh
 kcpserver配置文件修改：root@ubuntu:~#   vi /usr/local/kcp-server/server-kcptun.json
 修改后VPS需要reboot
 
-### UnInstall
-```Bash
-    ./install-kcp-server.sh uninstall
-```
-### Update
-```Bash
-    ./install-kcp-server.sh update
-```
 ### 服务器管理
 ```Bash
     Usage: /etc/init.d/kcp-server {start|stop|restart|status}
