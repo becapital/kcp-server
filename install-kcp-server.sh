@@ -322,7 +322,7 @@ function install_program_server_clang(){
     [ -n "${input_port}" ] && set_kcptun_port="${input_port}"
     echo "kcptun port: ${set_kcptun_port}"
     echo ""
-    default_kcptun_pwd=`moon`
+    default_kcptun_pwd=`fun_randstr`
     read -p "Please input Password (Default Password: ${default_kcptun_pwd}):" set_kcptun_pwd
     [ -z "${set_kcptun_pwd}" ] && set_kcptun_pwd="${default_kcptun_pwd}"
     echo "kcptun password: ${set_kcptun_pwd}"
