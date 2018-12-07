@@ -184,7 +184,7 @@ function fun_input_kcptun_port(){
 }
 # input port
 function fun_input_socks5_port(){
-    def_socks5_port="12948"
+    def_socks5_port="12888"
 }
 # Check mtu
 function fun_check_mtu(){
@@ -479,8 +479,8 @@ cat > ${str_program_dir}/${program_config_file}<<-EOF
     "crypt": "${strcrypt}",
     "mode": "${strmode}",
     "mtu": ${strInputMTU},
-    "sndwnd": 10240,
-    "rcvwnd": 10240,
+    "sndwnd": 20480,
+    "rcvwnd": 20480,
     "nocomp": ${set_kcptun_comp}
 }
 EOF
@@ -493,8 +493,8 @@ cat > ${str_program_dir}/client.json<<-EOF
     "mode": "${strmode}",
     "conn": 1,
     "mtu": ${strInputMTU},
-    "sndwnd": 10240,
-    "rcvwnd": 10240,
+    "sndwnd": 20480,
+    "rcvwnd": 20480,
     "nocomp": ${set_kcptun_comp}
 }
 EOF
