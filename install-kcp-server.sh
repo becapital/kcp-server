@@ -379,7 +379,7 @@ function install_program_server_clang(){
             exit 1
             ;;
         *)
-            strcrypt="aes"
+            strcrypt="salsa20"
             ;;
     esac
     echo "crypt mode: ${strcrypt}"
@@ -408,7 +408,7 @@ function install_program_server_clang(){
             exit 1
             ;;
         *)
-            strmode="fast2"
+            strmode="fast3"
             ;;
     esac
     echo "fast mode: ${strmode}"
@@ -448,7 +448,7 @@ function install_program_server_clang(){
         ;;
         *)
         echo "The iptables is not set!"
-        set_iptables="n"
+        set_iptables="yes"
         esac
 
     echo ""
