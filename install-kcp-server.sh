@@ -479,8 +479,8 @@ cat > ${str_program_dir}/${program_config_file}<<-EOF
     "crypt": "${strcrypt}",
     "mode": "${strmode}",
     "mtu": ${strInputMTU},
-    "sndwnd": 20480,
-    "rcvwnd": 20480,
+    "sndwnd": 1024,
+    "rcvwnd": 1024,
     "nocomp": ${set_kcptun_comp}
 }
 EOF
@@ -493,8 +493,8 @@ cat > ${str_program_dir}/client.json<<-EOF
     "mode": "${strmode}",
     "conn": 1,
     "mtu": ${strInputMTU},
-    "sndwnd": 20480,
-    "rcvwnd": 20480,
+    "sndwnd": 1024,
+    "rcvwnd": 1024,
     "nocomp": ${set_kcptun_comp}
 }
 EOF
