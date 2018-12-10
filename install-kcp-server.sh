@@ -493,7 +493,7 @@ cat > ${str_program_dir}/client.json<<-EOF
     "mode": "${strmode}",
     "conn": 1,
     "mtu": ${strInputMTU},
-    "sndwnd": 1024,
+    "sndwnd": 128,
     "rcvwnd": 1024,
     "nocomp": ${set_kcptun_comp}
 }
