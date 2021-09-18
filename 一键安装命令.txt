@@ -13,7 +13,7 @@ Update
 ./install-kcp-server.sh update
 
 
-服务器管理
+路
 Usage: /etc/init.d/kcp-server {start|stop|restart|status}
 
 
