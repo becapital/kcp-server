@@ -10,7 +10,7 @@ export PATH
 version="3.6"
 str_program_dir="/usr/local/kcp-server"
 # 修改：使用指定 TAG 的 API URL
-kcptun_releases="https://api.github.com/repos/xtaci/kcptun/releases/tags/v20250730"
+kcptun_releases="https://api.github.com/repos/xtaci/kcptun/releases/tags/v20190718"
 kcptun_api_filename="/tmp/kcptun_api_file.txt"
 program_name="kcp-server"
 kcp_init="/etc/init.d/${program_name}"
