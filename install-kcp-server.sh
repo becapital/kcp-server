@@ -9,7 +9,6 @@ export PATH
 #===============================================================================================
 version="3.6"
 str_program_dir="/usr/local/kcp-server"
-# 修改：使用指定 TAG 的 API URL
 kcptun_releases="https://api.github.com/repos/xtaci/kcptun/releases/tags/v20190718"
 kcptun_api_filename="/tmp/kcptun_api_file.txt"
 program_name="kcp-server"
@@ -263,8 +262,7 @@ function fun_getVer(){
     rm -f ${kcptun_api_filename}
     wget --no-check-certificate -qO- ${kcptun_releases} > ${kcptun_api_filename}
     if [ -s ${kcptun_api_filename} ]; then
-        # 修改：直接从指定 TAG 获取版本信息
-        kcptun_version="v20250730"
+        kcptun_version=`cat ${kcptun_api_filename} | grep \"tag_name\" | cut -d\" -f4`
         kcptun_latest_filename=`cat ${kcptun_api_filename} | grep \"name\" | grep kcptun-linux-${ARCHS} | cut -d\" -f4`
         kcptun_latest_file_url=`cat ${kcptun_api_filename} | grep \"browser_download_url\" | grep ${kcptun_version}/kcptun-linux-${ARCHS} | cut -d\" -f4`
         if [ -z "${kcptun_latest_file_url}" ]; then
