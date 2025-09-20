@@ -11,7 +11,8 @@ wget --no-check-certificate https://raw.githubusercontent.com/becapital/kcp-serv
 chmod 500 ./install-kcp-server.sh
 ./install-kcp-server.sh install
 ```
-## kcpserver配置文件修改： vi /usr/local/kcp-server/server-kcptun.json
+## kcpserver配置文件修改： 
+vi /usr/local/kcp-server/server-kcptun.json，
 修改后VPS需要reboot
 
 ### 服务器管理
@@ -19,9 +20,13 @@ chmod 500 ./install-kcp-server.sh
     Usage: /etc/init.d/kcp-server {start|stop|restart|status}
 ```
 /etc/init.d/kcp-server restart
- 
+/etc/init.d/kcp-server stop
 /etc/init.d/kcp-server status
-
 ./install-kcp-server.sh uninstall
-
 ./install-kcp-server.sh update
+
+### 下载指定KCPTUN版本：
+GitHub API对于特定tag的release的URL是：https://api.github.com/repos/xtaci/kcptun/releases/tags/<TAG>
+
+所以，打开文件：install-kcp-server.sh，前面几行的 kcptun_releases修改为例如：
+kcptun_releases="https://api.github.com/repos/xtaci/kcptun/releases/tags/v20190718"
